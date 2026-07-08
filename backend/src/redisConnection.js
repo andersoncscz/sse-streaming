@@ -1,4 +1,4 @@
-const { RedisClient } = require('redis')
+const { createClient } = require('redis')
 
 class RedisConnection {
   constructor() {
@@ -11,8 +11,8 @@ class RedisConnection {
     }
 
     try {
-      this.client = new RedisClient({
-        url: 'redis://redis:6379',
+      this.client = createClient({
+        url: process.env.REDIS_URL || 'redis://redis:6379',
       })
 
       await this.client.connect()
