@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - sse_network
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - sse_network
+
+
+  backend:
+    build: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    networks:
+      - sse_network
+
+networks:
+  sse_network:
+    driver: bridge

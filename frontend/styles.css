@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+  color: #d9ed92;
+}
+
+header {
+  padding: 24px;
+  border-bottom: 2px solid #2c6e49;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+}
+
+.connect-state-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  border: 1px solid #2c6e49;
+  padding: 16px;
+  font-size: x-large;
+}
+
+#connection-state-circle {
+  height: 20px;
+  width: 20px;
+  border: 2px solid;
+}
+
+#connection-state-circle.connection-started {
+  background-color: yellow;
+  border-color: orange;
+}
+
+#connection-state-circle.connection-stablished {
+  background-color: #06d6a0;
+  border-color: #2c6e49;
+}
+
+#connection-state-circle.connection-closed {
+  background-color: tomato;
+  border-color: red;
+}
+
+#messages-list {
+  display: flex;
+  flex-direction: column;
+  display: none;
+  gap: 12px;
+}
+
+.notification-label {
+  font-weight: bold;
+}
+
+.message {
+  padding: 12px;
+  border: 2px solid #a3b18a;
+  color: yellow;
+}
+
+.message-container {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
