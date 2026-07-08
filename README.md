@@ -62,7 +62,7 @@ different container hostnames as Nginx round-robins connections — yet a single
 
 ### :brain: System Design
 
-<img width="1784" height="729" alt="System-Design" src="https://github.com/user-attachments/assets/e6f6c872-4047-4fef-8f1a-ccd12c0ebb61" />
+<img width="1449" height="513" alt="system-design" src="https://github.com/user-attachments/assets/c0c6202b-f5d6-40e4-8092-91ff94c2069c" />
 
 | Round Robin | Application Instances |
 |---|---|
