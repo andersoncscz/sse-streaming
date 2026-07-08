@@ -31,7 +31,6 @@ app.get('/stream', async (req, res) => {
   req.on('close', async () => {
     // Remove this user from the active clients array so we stop sending them data
     activeClients = activeClients.filter(client => client !== res);
-    res.end();
     console.log(`Stream disconnected. Remaining clients on this instance: ${activeClients.length}`);
   })
 })
